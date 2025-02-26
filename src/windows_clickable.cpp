@@ -61,6 +61,15 @@ static void *PlatformAllocate(size_t Size) {
     return Result;
 }
 
+static void PlatformMessageBox(const char *Message, ...) {
+    char Buffer[2048] = {};
+    va_list Args;
+    va_start(Args, Message);
+    vsnprintf(Buffer, sizeof(Buffer), Message, Args);
+    va_end(Args);
+    MessageBox(NULL, Buffer, "Error", MB_ICONERROR | MB_OK);
+}
+
 static void PlatformDebugPrint(const char *Message, ...) {
     char Buffer[2048];
     va_list Args;

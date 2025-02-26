@@ -3,6 +3,7 @@
 
 static void *PlatformAllocate(size_t Size);
 static void PlatformDebugPrint(const char *Message, ...);
+static void PlatformMessageBox(const char *Message, ...);
 
 struct entire_file {
     char *Contents;

@@ -116,14 +116,17 @@ static opengl *WindowsInitOpenGL(HDC DC) {
             }
             else {
                 LERROR("Could not create modern OpenGL rendering context.");
+                PlatformMessageBox("Could not create modern OpenGL rendering context.");
             }
         }
         else {
             LERROR("wglCreateContextAttribsARB not found.");
+            PlatformMessageBox("wglCreateContextAttribsARB not found.");
         }
     }
     else {
         LERROR("Failed to create OpenGL context.");
+        PlatformMessageBox("Failed to create OpenGL context.");
     }
     return OpenGL;
 }
